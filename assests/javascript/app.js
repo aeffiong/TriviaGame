@@ -36,7 +36,7 @@ console.log(game);
 var numCorrect = 0;
 var numWrong = 0;
 var numUnanswered = 0;
-var timer = 120;
+var timer = 10;
 var intervalId;
 
 // function to start the game
@@ -62,6 +62,18 @@ $(document).ready(function(){
     $("#question6").html(game[5].question);
 
 
+// submit function trying to get it to be a function -  
+// change interface when user clicks the submit button, but button click isn't working
+    $("#submit").on("click", ".btn", function(){
+        alert("does this work?");
+        $(".card-body").html("<p> Correct answers: " + numCorrect + 
+        "</p> <p> Incorrect answers: " + numWrong + "</p> <p> Unanswered questions: "
+        + numUnanswered + "</p>");
+        $(".btn").hide();
+        clearInterval(intervalId);
+    });
+
+
 // function to start timer
     function start() {
         intervalId = setInterval(decrement, 1000)
@@ -80,18 +92,14 @@ $(document).ready(function(){
             + numUnanswered + "</p>");
             $(".btn").hide();
         }
-        // change interface when user clicks the submit button, but button click isn't working
-    function submit() {
-        $(".btn").on("click", function(){
-            alert("Button clicked");
-            $(".card-body").html("<p> Correct answers: " + numCorrect + 
-            "</p> <p> Incorrect answers: " + numWrong + "</p> <p> Unanswered questions: "
-            + numUnanswered + "</p>");
-            $(".btn").hide()
-        });
+       
+    
+        
+            
     // var userGuess would equal the button that they clicked which would be an answer from the answer array
     // calculating points - if guess equals correct then numCorrect increase, if guess doesn't equal correct
     // then numWrong increases. Figure out a way to count unanswered if user doesn't answer a question
+    var userGuess;
     if(userGuess === correct) {
         numCorrect ++;
     }
@@ -99,13 +107,14 @@ $(document).ready(function(){
         numWrong ++;
     }
     }
+    start();
     
-    }
-start();
+    // function to record answers for each question
+    });
 
 
-// function to record answers for each question
 
-// function to change interface when time is up or user answers all questions
+
+
     
-});
+
