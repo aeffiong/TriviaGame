@@ -9,7 +9,7 @@ var game = {
 var numCorrect = 0;
 var numWrong = 0;
 var numUnanswered = 0;
-var timer = 120;
+var timer = 10;
 var intervalId;
 
 // function to start the game
@@ -24,6 +24,10 @@ $(document).ready(function(){
         if(timer === 0) {
             clearInterval(intervalId);
             alert("Time's Up!!")
+            $(".card-body").html("<p> Correct answers: " + numCorrect + 
+            "</p> <p> Incorrect answers: " + numWrong + "</p> <p> Unanswered questions: "
+            + numUnanswered + "</p>");
+            $(".btn").hide();
         }
     
     }
