@@ -116,6 +116,8 @@ $(document).ready(function(){
             for(var j = 0; j < game[i].answers.length; j++) {
                 console.log(game[i].answers[j]);
                 console.log("Hi");
+                // capture user guess and give them points for correct or incorrect - right now that numbers are out of control high lol
+                // I think I might need to move this out of the for loops
                 var userGuess6 = $('input[name=question-6]:checked').val();
                 console.log(userGuess6);
   
