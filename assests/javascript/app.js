@@ -17,7 +17,7 @@ var game = [
     },
 
     {
-        question: "4. How hours a sleep a night is recommended for general health?",
+        question: "4. How many hours a sleep a night is recommended for general health?",
         answers: ["7-9 hours a night", "less than 6 hours a night", "10-12 hours a night"],
         correctAnswer: "7-9 hours a night"
     },
@@ -39,7 +39,7 @@ var game = [
 // console.log(game[0].correctAnswer);
 var numCorrect = 0;
 var numWrong = 0;   
-var timer = 120;
+var timer = 45;
 var intervalId;
 
 // function to start the game
