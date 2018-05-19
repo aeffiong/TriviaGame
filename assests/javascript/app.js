@@ -39,7 +39,7 @@ var game = [
 // console.log(game[0].correctAnswer);
 var numCorrect = 0;
 var numWrong = 0;   
-var timer = 10;
+var timer = 120;
 var intervalId;
 
 // function to start the game
@@ -75,7 +75,7 @@ $(document).ready(function () {
     $("#q6-op2").html(game[5].answers[1]);
     $("#q6-op3").html(game[5].answers[2]);
 
-    // submit function trying to get it to be a function - couldn't get it to work as a function
+    // submit function
     // change interface when user clicks the submit button
     $("#submit").on("click", ".btn", function () {
         calculateScore();
@@ -85,8 +85,6 @@ $(document).ready(function () {
         $(".btn").hide();
         clearInterval(intervalId);
     });
-    // intervalId = setInterval(decrement, 1000)
-
 
     // function to start timer
     function start() {
@@ -113,22 +111,13 @@ $(document).ready(function () {
 
         // var userGuess would equal the button that they clicked which would be an answer from the answer array
         // calculating points - if guess equals correctAnswer then numCorrect increase, if guess doesn't equal correct
-        // then numWrong increases. Figure out a way to count unanswered if user doesn't answer a question
-        // double for loop to get the questions length and then the questions[i].answers.length to get answers
+        // then numWrong increases.
 
-        // for (var i = 0; i < game.length; i++) {
-            // console.log(i);
-            // for (var j = 0; j < game[i].answers.length; j++) {
-            //     console.log(game[i].answers[j]);
-            //     console.log("Hi");
-            // }
-
-            // capture user guess and give them points for correct or incorrect - right now that numbers are out of control high lol
+        // capture user guess and give them points for correct or incorrect - right now that numbers are out of control high lol
             var userGuess6 = $('input[name=question-6]:checked').val();
             console.log(userGuess6);
 
             if (userGuess6 === game[5].correctAnswer) {
-                console.log("shfhffhsfshhsfhsfhsf");
                 numCorrect++;
                 console.log(userGuess6);
                 console.log(game[5].correctAnswer);
@@ -204,25 +193,7 @@ $(document).ready(function () {
             }
         // }
     }
-
-
-
     start();
-    // function to record answers for each question and add up score
-    // var userGuess = $('input[name=question-6]:checked').val();
-
-    // if(userGuess === game[5].correctAnswer) {
-
-    //     numCorrect ++;
-    //     console.log(userGuess);
-    //     console.log(game[5].correctAnswer);
-    // } 
-
-    // else {
-    //     numWrong ++;
-    // }
-
-
 });
 
 
