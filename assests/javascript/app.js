@@ -3,37 +3,37 @@
 
 // define variables
 var game = [
-    {   question: "1. text 1",
-        answers: ["text", "text 1 answer", "text"],
-        correctAnswer: "text 1 answer"
+    {   question: "1. How many servings of fruits and vegetables should you eat a day?",
+        answers: ["1 serving", "5 servings", "10 servings"],
+        correctAnswer: "5 servings"
     },
-    {   question: "2. text 2",
-        answers: ["text 2", "text 2 answer", "text 2"],
-        correctAnswer: "text 2 answer"
+    {   question: "2. What's a serving size for protein?",
+        answers: ["3 steaks", "1/4 of your plate", "no protein"],
+        correctAnswer: "1/4 of your plate"
     },
-    {   question: "3. text 3",
-        answers: ["text", "text", "text 3 answer"],
-        correctAnswer: "text 3 answer"
-    },
-
-    {   question: "4. text 4",
-        answers: ["text 4 answer ", "text", "text"],
-        correctAnswer: "text 4 answer"
+    {   question: "3. What's a serving size for carbs?",
+        answers: ["all da carbs", "no carbs", "1/4 of your plate"],
+        correctAnswer: "1/4 of your plate"
     },
 
-    {   question: "5. text 5",
-        answers: ["text 5 answer", "text 2", "text 3"],
-        correctAnswer: "text 5 answer"
+    {   question: "4. How hours a sleep a night is recommended for general health?",
+        answers: ["7-9 hours a night", "less than 6 hours a night", "10-12 hours a night"],
+        correctAnswer: "7-9 hours a night"
     },
 
-    {   question: "6. text 6",
-        answers: ["text", "text", "text 6 answer"],
-        correctAnswer: "text 6 answer"
+    {   question: "5. How many minutes of moderate intensity cardio should you aim for a week?",
+        answers: ["150 minutes", "1 minute", "700 minutes"],
+        correctAnswer: "150 minutes"
+    },
+
+    {   question: "6. How many times a week should you do resistance training of all your major muscle groups?",
+        answers: ["5-6 times a week", "Never do resistance training", "2-3 times a week"],
+        correctAnswer: "2-3 times a week"
     },
 ]
 
-console.log(game);
-console.log(game[0].correctAnswer);
+// console.log(game);
+// console.log(game[0].correctAnswer);
 var numCorrect = 0;
 var numWrong = 0;
 var numUnanswered = 0;
@@ -111,25 +111,109 @@ $(document).ready(function(){
     // then numWrong increases. Figure out a way to count unanswered if user doesn't answer a question
     // double for loop to get the questions length and then the questions[i].answers.length to get answers
     
-    for(var i = 0; i < game.length; i++) {
-        console.log(i);
-        for(var j = 0; j < game[i].answers.length; j++) {
-            console.log(game[i].answers[j]);
-        }
-    }
-
+        for(var i = 0; i < game.length; i++) {
+            console.log(i);
+            for(var j = 0; j < game[i].answers.length; j++) {
+                console.log(game[i].answers[j]);
+                console.log("Hi");
+                var userGuess6 = $('input[name=question-6]:checked').val();
+                console.log(userGuess6);
   
-    }
+                if(userGuess6 === game[5].correctAnswer) {
+                    
+                    numCorrect ++;
+                    console.log(userGuess6);
+                    console.log(game[5].correctAnswer);
+                } 
+            
+                else {
+                    numWrong ++;
+                }
+                var userGuess5 = $('input[name=question-5]:checked').val();
+                console.log(userGuess5);
+  
+                if(userGuess5 === game[4].correctAnswer) {
+                    
+                    numCorrect ++;
+                    console.log(userGuess5);
+                    console.log(game[4].correctAnswer);
+                } 
+            
+                else {
+                    numWrong ++;
+                }
+                var userGuess4 = $('input[name=question-4]:checked').val();
+                console.log(userGuess4);
+  
+                if(userGuess4 === game[3].correctAnswer) {
+                    
+                    numCorrect ++;
+                    console.log(userGuess4);
+                    console.log(game[3].correctAnswer);
+                } 
+            
+                else {
+                    numWrong ++;
+                }
+                var userGuess3 = $('input[name=question-3]:checked').val();
+                console.log(userGuess3);
+  
+                if(userGuess3 === game[2].correctAnswer) {
+                    
+                    numCorrect ++;
+                    console.log(userGuess3);
+                    console.log(game[2].correctAnswer);
+                } 
+            
+                else {
+                    numWrong ++;
+                }
+                var userGuess2 = $('input[name=question-2]:checked').val();
+                console.log(userGuess2);
+  
+                if(userGuess2 === game[1].correctAnswer) {
+                    
+                    numCorrect ++;
+                    console.log(userGuess2);
+                    console.log(game[1].correctAnswer);
+                } 
+            
+                else {
+                    numWrong ++;
+                }
+                var userGuess1 = $('input[name=question-1]:checked').val();
+                console.log(userGuess1);
+  
+                if(userGuess1 === game[0].correctAnswer) {
+                    
+                    numCorrect ++;
+                    console.log(userGuess1);
+                    console.log(game[0].correctAnswer);
+                } 
+            
+                else {
+                    numWrong ++;
+                }
+            }
+
+
+        }
+
+    
+      
+        }
+    
+    
     start();
       // function to record answers for each question and add up score
-    var userGuess = $('input[name=question-6]:checked').val();
+    // var userGuess = $('input[name=question-6]:checked').val();
   
-    if(userGuess === game[5].correctAnswer) {
+    // if(userGuess === game[5].correctAnswer) {
         
-        numCorrect ++;
-        console.log(userGuess);
-        console.log(game[5].correctAnswer);
-    } 
+    //     numCorrect ++;
+    //     console.log(userGuess);
+    //     console.log(game[5].correctAnswer);
+    // } 
 
     // else {
     //     numWrong ++;
