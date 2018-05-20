@@ -1,6 +1,6 @@
 Thanks for the playing this trivia game.
 
-You will have 45 seconds to answer 6 health and fitness questions.
+Answer the health and fitness questions before time runs out.
 
 Click submit if you answer all the questions before the time is up. You will then see how many quetions you got right and wrong.
 
