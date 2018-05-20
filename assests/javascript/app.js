@@ -39,7 +39,7 @@ var game = [
 // console.log(game[0].correctAnswer);
 var numCorrect = 0;
 var numWrong = 0;   
-var timer = 45;
+var timer = 450;
 var intervalId;
 
 // function to start the game
